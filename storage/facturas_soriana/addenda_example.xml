@@ -1,0 +1,45 @@
+</cfdi:Complemento>
+    <cfdi:Addenda>
+        <DSCargaRemisionProv>
+            <Remision Id="Remision1" RowOrder="0">
+                <Proveedor>123456</Proveedor>
+                <Remision>261013</Remision>
+                <Consecutivo>0</Consecutivo>
+                <FechaRemision>2015-02-19T00:00:00</FechaRemision>
+                <Tienda>5516</Tienda>
+                <TipoMoneda>1</TipoMoneda>
+                <TipoBulto>1</TipoBulto>
+                <EntregaMercancia>26</EntregaMercancia>
+                <CumpleReqFiscales>true</CumpleReqFiscales>
+                <CantidadBultos>1</CantidadBultos>
+                <Subtotal>741.39</Subtotal>
+                <Descuentos>0.00</Descuentos>
+                <IEPS>0.00</IEPS>
+                <IVA>0.00</IVA>
+                <OtrosImpuestos>0.00</OtrosImpuestos>
+                <Total>741.39</Total>
+                <CantidadPedidos>1</CantidadPedidos>
+                <FechaEntregaMercancia>2015-02-21T00:00:00</FechaEntregaMercancia>
+                <Cita>0</Cita>
+            </Remision>
+            <Pedidos Id="Pedido1" RowOrder="1">
+                <Proveedor>123456</Proveedor>
+                <Remision>261013</Remision>
+                <FolioPedido>41599000</FolioPedido>
+                <Tienda>5516</Tienda>
+                <CantidadArticulos>1</CantidadArticulos>
+            </Pedidos>
+            <Articulos Id="Articulos1" RowOrder="1">
+                <Proveedor>123456</Proveedor>
+                <Remision>261013</Remision>
+                <FolioPedido>41599000</FolioPedido>
+                <Tienda>5516</Tienda>
+                <Codigo>7501008035612</Codigo>
+                <CantidadUnidadCompra>1</CantidadUnidadCompra>
+                <CostoNetoUnidadCompra>741.39</CostoNetoUnidadCompra>
+                <PorcentajeIEPS>0.00</PorcentajeIEPS>
+                <PorcentajeIVA>0.00</PorcentajeIVA>
+            </Articulos>
+        </DSCargaRemisionProv>
+    </cfdi:Addenda>
+        </cfdi:Comprobante>

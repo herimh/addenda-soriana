@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' =>  'admin'], function () {
+    CRUD::resource('addenda', 'AddendaController');
+});
+
+Route::get('/', function(){
+    return redirect('admin');
 });

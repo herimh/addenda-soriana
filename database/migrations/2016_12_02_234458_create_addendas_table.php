@@ -15,8 +15,9 @@ class CreateAddendasTable extends Migration
     {
         Schema::create('addendas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('provider_code', 15);
             $table->string('invoice', 20);
-            $table->string('consecutive', 100)->nullable();
+            $table->string('consecutive', 100)->default(0);
             $table->integer('shop_code');
             $table->integer('money_type');
             $table->integer('package_type');

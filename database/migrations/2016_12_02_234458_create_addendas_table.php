@@ -26,6 +26,9 @@ class CreateAddendasTable extends Migration
             $table->date('delivery_date');
             $table->string('delivery_folio', 100)->nullable();
             $table->string('cite', 100)->nullable();
+            $table->string('purchase_order', 100)->nullable();
+            $table->string('cfdi_file', 150)->nullable();
+            $table->string('addenda_file', 150)->nullable();
             $table->timestamps();
         });
     }

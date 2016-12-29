@@ -25,7 +25,7 @@ class AddendaCrudRequest extends CrudRequest {
     public function rules()
     {
         return [
-            'invoice' => 'required|min:5|max:255'
+            'delivery_folio' => 'required|min:5|max:255'
         ];
     }
 

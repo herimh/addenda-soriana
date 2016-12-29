@@ -9,5 +9,15 @@ class Addenda extends Model
 {
     use CrudTrait;
 
-    //
+    protected $fillable = ['provider_code', 'invoice', 'consecutive', 'store_code', 'money_type', 'package_type', 'package_quantity',
+        'delivery_place', 'delivery_date', 'delivery_folio', 'cite', 'purchase_order', 'cfdi_file', 'addenda_file'];
+
+    public function setCfdiFileAttribute($value)
+    {
+        $attribute_name = "cfdi_file";
+        $disk = "public";
+        $destination_path = "facturas_soriana/cfdis_originales";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+    }
 }

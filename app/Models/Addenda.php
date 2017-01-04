@@ -15,8 +15,8 @@ class Addenda extends Model
     public function setCfdiFileAttribute($value)
     {
         $attribute_name = "cfdi_file";
-        $disk = "public";
-        $destination_path = "facturas_soriana/cfdis_originales";
+        $disk = "fsoriana";
+        $destination_path = "cfdis_originales";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
     }

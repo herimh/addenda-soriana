@@ -78,8 +78,9 @@ trait AddendaTrait
 
         $this->crud->addField([
             'name' => 'cfdi_file', 'label' => trans('label.cfdi_file'), 'type' => 'upload', 'upload' => true,
-            'disk' => 'public', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
-            'wrapperAttributes' => ['class' => 'form-group col-md-6']
+            'disk' => 'fsoriana', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+            'wrapperAttributes' => ['class' => 'form-group col-md-6'],
+            'upload' => true,
         ]);
 
 

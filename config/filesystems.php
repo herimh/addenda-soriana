@@ -62,6 +62,11 @@ return [
             'bucket' => 'your-bucket',
         ],
 
+        'fsoriana' => [
+            'driver' => 'local',
+            'root' => storage_path('facturas_soriana'),
+        ],
+
     ],
 
     'uploads' => [

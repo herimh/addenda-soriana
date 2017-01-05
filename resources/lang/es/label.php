@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
 
@@ -20,6 +20,7 @@ return [
     'purchase_order'    => 'Orden de Compra',
     'cfdi_file'         => 'Factura (Archivo .xml)',
     'invoice'           => 'Factura',
+    'send'		=> 'Enviar',
 
 
     'package_quantity'  => 'Cantidad de Bultos'

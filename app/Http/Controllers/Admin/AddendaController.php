@@ -63,19 +63,25 @@ class AddendaController extends CrudController
     }
 
     /**
-     * Show the form for creating inserting a new row.
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
      *
      * @return Response
      */
-    public function create()
+    public function edit($id)
     {
-        //$cfdiArray = CFDIXmlReader::getArrayFromDir(storage_path('facturas_soriana/cfdi_temp/'));
+        $this->crud->hasAccessOrFail('update');
 
-        //dd($cfdiArray[0]);
+        // get the info for that entry
+        $this->data['entry'] = $this->crud->getEntry($id);
+        $this->data['crud'] = $this->crud;
+        $this->data['fields'] = $this->crud->getUpdateFields($id);
+        $this->data['title'] = trans('backpack::crud.edit').' '.$this->crud->entity_name;
 
+        $this->data['id'] = $id;
 
-
-        return parent::create();
+        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+        return view('admin.addenda.edit', $this->data);
     }
-
 }

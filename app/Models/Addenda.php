@@ -10,7 +10,7 @@ class Addenda extends Model
     use CrudTrait;
 
     protected $fillable = ['provider_code', 'invoice', 'consecutive', 'store_code', 'money_type', 'package_type', 'package_quantity',
-        'delivery_place', 'delivery_date', 'delivery_folio', 'cite', 'purchase_order', 'cfdi_file', 'addenda_file'];
+        'delivery_place', 'delivery_date', 'delivery_folio', 'cite', 'purchase_order', 'cfdi_file', 'addenda_file', 'status'];
 
     public function setCfdiFileAttribute($value)
     {

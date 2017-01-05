@@ -16,8 +16,11 @@ trait AddendaTrait
         $this->crud->setEntityNameStrings('addenda', 'addendas');
 
         //LIST FIELDS
-        $this->crud->setColumns(['invoice']);
-        $this->crud->setColumns(['consecutive']);
+        $this->crud->addColumn(['name' => 'id', 'label' => trans('label.id')]);
+        $this->crud->addColumn(['name' => 'invoice', 'label' => trans('label.invoice')]);
+        $this->crud->addColumn(['name' => 'delivery_date', 'label' => trans('label.delivery_date')]);
+        $this->crud->addColumn(['name' => 'store_code', 'label' => trans('label.store_code')]);
+        $this->crud->addColumn(['name' => 'created_at', 'label' => trans('label.created_at')]);
 
         //CREATE AND EDIT FIELDS
         $this->crud->addField([
@@ -87,7 +90,6 @@ trait AddendaTrait
 
         //CumpleReqFiscales: true
         //PedidoEmitidoProveedor: SI
-
 
     }
 

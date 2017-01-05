@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'created_at'        => 'Creado El',
+    'id'                => 'Id',
     'addendas'          => 'Addendas',
     'user_admin'        => 'Admin. de Usuarios',
     'users'        => 'Usuarios',
@@ -16,6 +19,8 @@ return [
     'delivery_folio'    => 'Folio de Entrega',
     'purchase_order'    => 'Orden de Compra',
     'cfdi_file'         => 'Factura (Archivo .xml)',
+    'invoice'           => 'Factura',
+
 
     'package_quantity'  => 'Cantidad de Bultos'
 ];

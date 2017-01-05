@@ -29,6 +29,7 @@ class CreateAddendasTable extends Migration
             $table->string('purchase_order', 100)->nullable();
             $table->string('cfdi_file', 150)->nullable();
             $table->string('addenda_file', 150)->nullable();
+            $table->string('status', 30)->nullable();
             $table->timestamps();
         });
     }

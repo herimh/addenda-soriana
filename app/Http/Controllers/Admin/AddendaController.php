@@ -84,4 +84,38 @@ class AddendaController extends CrudController
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
         return view('admin.addenda.edit', $this->data);
     }
+
+    private function getAddendaXml(Addenda $addenda)
+    {
+        $cfdi = new FloreriaHortensiaCFDI(storage_path('facturas_soriana/').$addenda->cfdi_file);
+
+        $xml = <<<XML
+<cfdi:Addenda>
+    <DSCargaRemisionProv>
+        <Remision Id="Remision{$addenda->id}" RowOrder="0">
+            <Proveedor>{$addenda->provider_code}</Proveedor>
+            <Remision>{$addenda->invoice}</Remision>
+            <Consecutive>0</Consecutive>
+            <FechaRemision>{$cfdi->getCreationDate()}</FechaRemision>
+            <Tienda>{$addenda->store_code}</Tienda>
+            <TipoMoneda>{$addenda->money_type}</TipoMoneda>
+            <TipoBulto>{$addenda->package_type}</TipoBulto>
+            <EntregaMercancia> .... </EntregaMercancia>
+            <CumpleReqFiscales>true</CumpleReqFiscales>
+            <CantidadBultos>{$addenda->package_quantity}</CantidadBultos>
+            <Subtotal> ... </Subtotal>
+            <Descuentos> ... </Descuentos>
+            <IEPS> ... </IEPS>
+            <IVA> ... </IVA>
+            <OtrosImpuestos> ... </OtrosImpuestos>
+            <Total> ... </Total>
+            <CantidadPedidos>1</CantidadPedidos>
+            <FechaEntregaMercancia>{$addenda->delivery_date}</FechaEntregaMercancia>
+            <Cita> ... </Cita>
+        </Remision>
+    </DSCargaRemisionProv>
+</cfdi:Addenda>
+XML;
+
+    }
 }

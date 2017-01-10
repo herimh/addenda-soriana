@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v2.3.8",
+            "version": "v2.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "ced14b133daed8c163863a497c43dcf69eea4340"
+                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/ced14b133daed8c163863a497c43dcf69eea4340",
-                "reference": "ced14b133daed8c163863a497c43dcf69eea4340",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/2be703222af2edcb87e562d3da2299e4352bff8a",
+                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a",
                 "shasum": ""
             },
             "type": "library",
@@ -45,20 +45,20 @@
                 "theme",
                 "web"
             ],
-            "time": "2016-11-04 14:42:55"
+            "time": "2017-01-08 21:03:57"
         },
         {
             "name": "backpack/base",
-            "version": "0.7.11",
+            "version": "0.7.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Base.git",
-                "reference": "5ed0c19a58eb996bab534790ed6416008ed2ec00"
+                "reference": "f7cc0678db9c7f51c4915028dd00c0ba6577211c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/5ed0c19a58eb996bab534790ed6416008ed2ec00",
-                "reference": "5ed0c19a58eb996bab534790ed6416008ed2ec00",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/f7cc0678db9c7f51c4915028dd00c0ba6577211c",
+                "reference": "f7cc0678db9c7f51c4915028dd00c0ba6577211c",
                 "shasum": ""
             },
             "require": {
@@ -104,20 +104,20 @@
                 "backpack",
                 "base"
             ],
-            "time": "2016-12-21 10:12:34"
+            "time": "2017-01-08 09:18:28"
         },
         {
             "name": "backpack/crud",
-            "version": "3.1.48",
+            "version": "3.1.50",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "7fbcbd5c6759d41a1d7c30fce3ba01de427cc5c4"
+                "reference": "8d54c97387cbfa73c6e7b61d51de53c77e9dec9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/7fbcbd5c6759d41a1d7c30fce3ba01de427cc5c4",
-                "reference": "7fbcbd5c6759d41a1d7c30fce3ba01de427cc5c4",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/8d54c97387cbfa73c6e7b61d51de53c77e9dec9a",
+                "reference": "8d54c97387cbfa73c6e7b61d51de53c77e9dec9a",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "read",
                 "update"
             ],
-            "time": "2016-12-14 12:49:39"
+            "time": "2017-01-08 10:52:03"
         },
         {
             "name": "backpack/permissionmanager",
@@ -1230,16 +1230,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.28",
+            "version": "v5.3.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a64fc4f8958091ca39623b2e8c8f173cb34fa47a"
+                "reference": "6fd76dec90466dc3f703d8df72e38130f2ee6a32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a64fc4f8958091ca39623b2e8c8f173cb34fa47a",
-                "reference": "a64fc4f8958091ca39623b2e8c8f173cb34fa47a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6fd76dec90466dc3f703d8df72e38130f2ee6a32",
+                "reference": "6fd76dec90466dc3f703d8df72e38130f2ee6a32",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "php": ">=5.6.4",
                 "psy/psysh": "0.7.*|0.8.*",
                 "ramsey/uuid": "~3.0",
-                "swiftmailer/swiftmailer": "~5.1",
+                "swiftmailer/swiftmailer": "~5.4",
                 "symfony/console": "3.1.*",
                 "symfony/debug": "3.1.*",
                 "symfony/finder": "3.1.*",
@@ -1354,7 +1354,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-12-15 18:03:17"
+            "time": "2017-01-06 14:33:56"
         },
         {
             "name": "laravelcollective/html",

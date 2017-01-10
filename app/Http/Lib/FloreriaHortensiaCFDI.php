@@ -35,4 +35,8 @@ class FloreriaHortensiaCFDI
     public function getSerieFolio(){
         return str_replace(' ', '', $this->getSerie().$this->getFolio());
     }
+
+    public function getCreationDate(){
+        return $this->cfdiArray['Comprobante']['@atributos']['fecha'];
+    }
 }

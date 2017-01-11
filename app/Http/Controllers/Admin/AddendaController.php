@@ -81,6 +81,11 @@ class AddendaController extends CrudController
 
         $this->data['id'] = $id;
 
+        //TODO: boorame
+        $addenda = Addenda::find($id);
+        $cfdi = new  FloreriaHortensiaCFDI(storage_path('facturas_soriana/').$addenda->cfdi_file);
+        dump($cfdi->getCfdiArray());
+
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
         return view('admin.addenda.edit', $this->data);
     }
@@ -89,10 +94,12 @@ class AddendaController extends CrudController
     {
         $cfdi = new FloreriaHortensiaCFDI(storage_path('facturas_soriana/').$addenda->cfdi_file);
 
+        $cfdiArray = $cfdi->getCfdiArray();
+
         $xml = <<<XML
 <cfdi:Addenda>
     <DSCargaRemisionProv>
-        <Remision Id="Remision{$addenda->id}" RowOrder="0">
+        <Remision Id="Remision1" RowOrder="0">
             <Proveedor>{$addenda->provider_code}</Proveedor>
             <Remision>{$addenda->invoice}</Remision>
             <Consecutive>0</Consecutive>
@@ -103,12 +110,12 @@ class AddendaController extends CrudController
             <EntregaMercancia> .... </EntregaMercancia>
             <CumpleReqFiscales>true</CumpleReqFiscales>
             <CantidadBultos>{$addenda->package_quantity}</CantidadBultos>
-            <Subtotal> ... </Subtotal>
-            <Descuentos> ... </Descuentos>
-            <IEPS> ... </IEPS>
-            <IVA> ... </IVA>
-            <OtrosImpuestos> ... </OtrosImpuestos>
-            <Total> ... </Total>
+            <Subtotal>{$cfdi->getSubtotal()}</Subtotal>
+            <Descuentos>{$cfdi->getDiscount()}</Descuentos>
+            <IEPS>{$cfdi->getIEPS()}</IEPS>
+            <IVA>{$cfdi->getIVA()}</IVA>
+            <OtrosImpuestos>0.00</OtrosImpuestos>
+            <Total>{$cfdi->getTotal()}</Total>
             <CantidadPedidos>1</CantidadPedidos>
             <FechaEntregaMercancia>{$addenda->delivery_date}</FechaEntregaMercancia>
             <Cita> ... </Cita>

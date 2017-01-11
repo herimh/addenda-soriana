@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: heriberto
- * Date: 4/01/17
- * Time: 02:39 PM
- */
 
 namespace App\Http\Lib;
 
@@ -32,11 +26,35 @@ class FloreriaHortensiaCFDI
         return $this->cfdiArray['Comprobante']['@atributos']['serie'];
     }
 
+    public function getSubtotal(){
+        return $this->cfdiArray['Comprobante']['@atributos']['subtotal'];
+    }
+
+    public function getDiscount(){
+        return $this->cfdiArray['Comprobante']['@atributos']['descuento'];
+    }
+
+    public function getIEPS(){
+        return '';//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
+    }
+
+    public function getIVA(){
+        return '';//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
+    }
+
+    public function getTotal(){
+        return $this->cfdiArray['Comprobante']['@atributos']['total'];
+    }
+
     public function getSerieFolio(){
         return str_replace(' ', '', $this->getSerie().$this->getFolio());
     }
 
     public function getCreationDate(){
         return $this->cfdiArray['Comprobante']['@atributos']['fecha'];
+    }
+
+    public function getCfdiArray(){
+        return $this->cfdiArray;
     }
 }

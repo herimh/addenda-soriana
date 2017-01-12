@@ -35,11 +35,11 @@ class FloreriaHortensiaCFDI
     }
 
     public function getIEPS(){
-        return '';//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
+        return 0;//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
     }
 
     public function getIVA(){
-        return '';//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
+        return 0;//$this->cfdiArray['Comprobante']['@atributos']['descuento'];
     }
 
     public function getTotal(){
@@ -52,6 +52,14 @@ class FloreriaHortensiaCFDI
 
     public function getCreationDate(){
         return $this->cfdiArray['Comprobante']['@atributos']['fecha'];
+    }
+
+    public function getOrderProducts(){
+        return $this->cfdiArray['Comprobante']['Conceptos']['Concepto']['@atributos'];
+    }
+
+    public function getProductsCount(){
+        return count($this->getOrderProducts());
     }
 
     public function getCfdiArray(){

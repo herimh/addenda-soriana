@@ -11,7 +11,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\AddendaCrudRequest as StoreRequest;
 use App\Http\Requests\AddendaCrudRequest as UpdateRequest;
-
+use PhpParser\Serializer\XML;
 
 
 class AddendaController extends CrudController
@@ -84,7 +84,10 @@ class AddendaController extends CrudController
         //TODO: boorame
         $addenda = Addenda::find($id);
         $cfdi = new  FloreriaHortensiaCFDI(storage_path('facturas_soriana/').$addenda->cfdi_file);
-        dump($cfdi->getCfdiArray());
+
+        dump($this->getAddendaXml($addenda));
+
+        dd($cfdi->getCfdiArray());
 
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
         return view('admin.addenda.edit', $this->data);
@@ -96,10 +99,8 @@ class AddendaController extends CrudController
 
         $cfdiArray = $cfdi->getCfdiArray();
 
-        $xml = <<<XML
-<cfdi:Addenda>
-    <DSCargaRemisionProv>
-        <Remision Id="Remision1" RowOrder="0">
+        $remision = <<<XML
+<Remision Id="Remision1" RowOrder="0">
             <Proveedor>{$addenda->provider_code}</Proveedor>
             <Remision>{$addenda->invoice}</Remision>
             <Consecutive>0</Consecutive>
@@ -120,9 +121,48 @@ class AddendaController extends CrudController
             <FechaEntregaMercancia>{$addenda->delivery_date}</FechaEntregaMercancia>
             <Cita> ... </Cita>
         </Remision>
+XML;
+
+
+        $pedidos = <<<XML
+<Pedidos Id="Pedido1" RowOrder="1">
+            <Proveedor>{$addenda->provider_code}</Proveedor> 
+            <Remision>{$addenda->invoice}</Remision> 
+            <FolioPedido>....</FolioPedido> 
+            <Tienda>{$addenda->store_code}</Tienda> 
+            <CantidadArticulos>{$cfdi->getProductsCount()}</CantidadArticulos>
+        </Pedidos>
+XML;
+
+        $articulos = '';
+        foreach ($cfdi->getOrderProducts() as $index => $product){
+            $articulos.= <<<XML
+<Articulos Id="Articulos1" RowOrder="1">
+				<Proveedor>{$addenda->provider_code}</Proveedor> 
+				<Remision>{$addenda->invoice}</Remision> 
+				<FolioPedido>....</FolioPedido> 
+				<Tienda>{$addenda->store_code}</Tienda> 
+				<Codigo>{$product}</Codigo> 
+				<CantidadUnidadCompra>1</CantidadUnidadCompra> 
+				<CostoNetoUnidadCompra>741.39</CostoNetoUnidadCompra> 
+				<PorcentajeIEPS>0.00</PorcentajeIEPS> 
+				<PorcentajeIVA>0.00</PorcentajeIVA> 
+			</Articulos>
+XML;
+        }
+
+        $xml = <<<XML
+<cfdi:Addenda>
+    <DSCargaRemisionProv>
+        {$remision}
+        {$pedidos}
     </DSCargaRemisionProv>
 </cfdi:Addenda>
 XML;
 
+
+
+
+        return $xml;
     }
 }

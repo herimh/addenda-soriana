@@ -20,6 +20,7 @@ class conceptos
                 'cantidad'      => (float) $value->attributes()->cantidad,
                 'descripcion'   => (string) $value->attributes()->descripcion,
                 'importe'       => (float) $value->attributes()->importe,
+                'noIdentificacion' => (string) $value->attributes()->noIdentificacion,
                 'unidad'        => (string) $value->attributes()->unidad,
                 'valorUnitario' => (float) $value->attributes()->valorUnitario,
                 );

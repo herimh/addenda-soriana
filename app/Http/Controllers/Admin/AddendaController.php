@@ -137,14 +137,14 @@ XML;
         $articulos = '';
         foreach ($cfdi->getOrderProducts() as $index => $product){
             $articulos.= <<<XML
-<Articulos Id="Articulos1" RowOrder="1">
+<Articulos Id="Articulos{($index+1)}" RowOrder="1">
 				<Proveedor>{$addenda->provider_code}</Proveedor> 
 				<Remision>{$addenda->invoice}</Remision> 
 				<FolioPedido>....</FolioPedido> 
 				<Tienda>{$addenda->store_code}</Tienda> 
-				<Codigo>{$product}</Codigo> 
-				<CantidadUnidadCompra>1</CantidadUnidadCompra> 
-				<CostoNetoUnidadCompra>741.39</CostoNetoUnidadCompra> 
+				<Codigo>{$product["noIdentificacion"]}</Codigo> 
+				<CantidadUnidadCompra>{$product["cantidad"]}</CantidadUnidadCompra> 
+				<CostoNetoUnidadCompra>{$product["valorUnitario"]}</CostoNetoUnidadCompra> 
 				<PorcentajeIEPS>0.00</PorcentajeIEPS> 
 				<PorcentajeIVA>0.00</PorcentajeIVA> 
 			</Articulos>
@@ -156,6 +156,7 @@ XML;
     <DSCargaRemisionProv>
         {$remision}
         {$pedidos}
+        {$articulos}
     </DSCargaRemisionProv>
 </cfdi:Addenda>
 XML;

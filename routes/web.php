@@ -11,6 +11,10 @@
 |
 */
 
+Route::group(['prefix' => 'legacy', 'namespace' => 'Legacy'], function () {
+    CRUD::resource('flower', 'FlowerController');
+});
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' =>  'admin'], function () {
     CRUD::resource('addenda', 'AddendaController');
 });
